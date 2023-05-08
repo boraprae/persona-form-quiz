@@ -9,7 +9,7 @@ export interface TagsProps {
 export const Tags: React.FC<TagsProps> = ({ className, label, ...props }) => {
   return (
     <div className={`${className}`} {...props}>
-      <div className="flex flex-row w-fit items-start p-2 border-[1px] rounded-[6px] border-grey">
+      <div className="flex flex-row w-fit items-start mt-4 p-2 border-[1px] rounded-[6px] border-grey">
         <label className="label-tags mr-4">{label}</label>
         <button type="button">
           <VscChromeClose className="w-5 h-5 text-red-600" />

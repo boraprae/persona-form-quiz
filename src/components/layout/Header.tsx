@@ -14,7 +14,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className={`${className}`} {...props}>
         <div className="flex flex-row justify-between items-start p-5 border-b-[1px] border-grey">
-          <label className="label-header">Add Custom Persona</label>
+          <label className="text-[#141414] text-[20px] font-semibold">Add Custom Persona</label>
           <div>
             <button type="button" className="mt-[2px] lg:mt-2">
               <VscChromeClose className="w-6 h-6 lg:w-7 lg:h-7 text-gray-400"/>
