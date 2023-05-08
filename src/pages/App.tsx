@@ -53,7 +53,6 @@ function App() {
     let newData = tagData;
     newData.push(value);
     setTagData(newData);
-    console.log(tagData);
   };
 
   return (
@@ -75,7 +74,7 @@ function App() {
             <></>
           )}
           <div className="flex flex-col bg-[#FAFAFA] rounded-[6px] mt-4 p-5 ">
-            <div className="flex items-end">
+            <div className="flex flex-row justify-end items-end">
               <button className="border-[1px] border-[#043673] bg-white py-2 px-4 rounded-[8px] w-fit flex flex-row">
                 <BsPlusLg className="w-6 h-6 text-[#043673] font-bold mr-2" />
                 <label className="text-[#043673] text-[14px] font-normal">
