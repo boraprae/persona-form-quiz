@@ -48,11 +48,17 @@ function App() {
   const [isChecked, setIsChecked] = useState(false);
   const [tagData, setTagData] = useState<string[]>([]);
 
-  const handleChange = (btnEvent:boolean, value: string) => {
+  const handleChange = (btnEvent: boolean, value: string) => {
     setIsChecked(!isChecked);
     let newData = tagData;
     newData.push(value);
     setTagData(newData);
+  };
+
+  const handleRemove = (tagLabel: string) => {
+    const uniqueArray = tagData.filter((item) => item !== tagLabel);
+    setTagData(uniqueArray);
+    setIsChecked(!isChecked);
   };
 
   return (
@@ -68,7 +74,7 @@ function App() {
           </div>
           {tagData.length > 0 ? (
             tagData.map((tag) => {
-              return <Tags label={tag} />;
+              return <Tags label={tag} onClick={() => handleRemove(tag)} />;
             })
           ) : (
             <></>
@@ -95,9 +101,7 @@ function App() {
                     {data.tags.map((tagData) => {
                       return (
                         <Checkbox
-                          onClick={() =>
-                            handleChange(isChecked, tagData.name)
-                          }
+                          onClick={() => handleChange(isChecked, tagData.name)}
                           label={tagData.name}
                           key={data.groupName + tagData.name}
                         />
